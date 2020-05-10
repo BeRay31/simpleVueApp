@@ -44,7 +44,7 @@ export default {
         padding: 0.3em;
     }
     .text-box {
-        background-color: #edf5e1;
+        background-color:var(--background-main-color);
         color: black;
         width: 2em;
         height: 2em;
@@ -56,6 +56,7 @@ export default {
         margin: auto;
         cursor: default;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
     }
     .logo-arrow {
         width: 2em;

@@ -1,6 +1,6 @@
 <template>
     <div class="q-footer-container">
-        <div class="eraseButton" @click="ansData.ans = ''">
+        <div class="touchableButton" @click="ansData.ans = ''">
             <span>Erase Answer</span>
         </div>
         <div class="controller">
@@ -31,14 +31,16 @@
         align-items: center;
         margin: 1em;
     }
-    .eraseButton {
+    .touchableButton {
         padding: 0.8em;
         border-radius: 0.7em;
         background-color: #edf5e1;
         cursor: pointer;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        background-color: var(--primary-color);
+        border: 3px solid var(--secondary-color);
     }
-    .eraseButton:hover {
+    .touchableButton:hover {
         background-color: #aab19f;
     }
 </style>

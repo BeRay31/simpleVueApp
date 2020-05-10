@@ -12,14 +12,10 @@
     import appQuestionFooter from './Qfooter.vue';
     import appQuestionBox from './Qbox.vue';
     import appQuestionAns from './Qans.vue';
+    import { eventBus } from '../main.js'
 
     export default {
-        props:["data"],
-        data() {
-            return {
-                index : 0,
-            }
-        },
+        props:["data","index"],
         components : {
             appQuestionHeader,
             appQuestionFooter,
@@ -30,12 +26,25 @@
             indexInc () {
                 if(this.index<this.data.length-1) {
                     this.index++;
+                    this.$emit('indexChanged',this.index);
                 }
             },
             indexDec () {
                 if(this.index>0) {
                     this.index--;
+                    this.$emit('indexChanged',this.index);
                 }
+            }
+        },
+        created() {
+            eventBus.$on('indexEdited',(data)=>{
+                this.index = data;
+                this.$emit('indexChanged',this.index);
+             });
+        },
+        watch:{
+            indexOnChange(){
+                eventBus.indexChange(this.index)
             }
         }
     }

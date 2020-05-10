@@ -1,11 +1,11 @@
 <template>
   <div class="status-container">
       <app-time-status/>
-      <app-ans-status :ansData="data"/>
-      <div class="button-finish">
-
+      <app-ans-status :ansData="data" :idx="index"/>
+      <div class="submitButton reviewButton touchableButton">
+          Submit
       </div>
-  </div>
+    </div>
 </template>
 
 <script>
@@ -13,7 +13,7 @@
     import AnsStatus from './AnswerStatus.vue';
 
     export default {
-        props:["data"],
+        props:["data","index"],
         components: {
             appTimeStatus : TimeStatus,
             appAnsStatus : AnsStatus,
@@ -23,15 +23,16 @@
 
 <style>
     .status-container{
-        background-color: #a8d0e6;
         margin: 0 1em;
         border-radius: 3vh;
         display: grid;
         grid-template-rows: 35% 55% 10%;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        align-items: center;
+        justify-items: center;
     }
-    .button-finish {
-        background-color: yellow;
-        margin: 0.8em;
+    .submitButton {
+        margin: auto;
+
     }
+
 </style>

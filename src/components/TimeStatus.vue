@@ -6,15 +6,16 @@
     <div class="box-time">
         <div class="box-status">
           <span class="box-status-time">{{Math.floor(time/3600)}}</span>
-          <span class="box-details">hours</span>
+          <span class="box-details">Hours</span>
         </div>
         <div class="box-status">
           <span class="box-status-time">{{Math.floor((time%3600)/60)}}</span>
-          <span class="box-details">minute</span>
+          <span class="box-details">Minute</span>
         </div>
-    </div>
-    <div class="detail-time">
-      <span>Sisa Waktu Try Out : {{Math.floor(time/3600)}}:{{Math.floor((time%3600)/60)}}:{{(time%3600)%60}} </span>
+          <div class="box-status">
+          <span class="box-status-time">{{(time%3600)%60}}</span>
+          <span class="box-details">Second</span>
+        </div>
     </div>
   </div>
 </template>
@@ -42,10 +43,16 @@
 
 <style>
     .time-status-container{
+        background-color: var(--primary-color);
+        margin: 1em;
+        padding: 1em;
+        border-radius: 1.4em;
+        width: 90%;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         margin: 0.8em;
         display: grid;
         justify-content: center;
-        grid-template-rows: 1fr 2fr 1fr;
+        grid-template-rows: 1fr 2fr;
     }
     .header-text {
       display: flex;
@@ -57,32 +64,28 @@
       display: grid;
       align-items: center;
       justify-items: center;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
     }
     .box-status {
-      background-color: aqua;
       display :flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       margin : 0.3em;
-      margin: 2em;
+      margin: 1.4em;
       height: 60%;
       width: 80%;
       border-radius: 20%;
       background-color: #edf5e1;
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      border: 3px solid var(--secondary-color);
     }
     .box-status-time {
       font-size: 30px;
-      margin-bottom: 0.5em;
+      margin-top: 0.5em;
     }
     .box-details {
+      margin-bottom: 0.3em;
       font-size: 18px;
-    }
-    .detail-time {
-      display: flex;
-      justify-content: center;
-      align-items: center;
     }
 </style>
