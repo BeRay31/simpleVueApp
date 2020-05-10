@@ -30,7 +30,6 @@ export default {
         justify-content: space-between;
         align-items: center;
         margin: 1em;
-        background-color: aqua;
     }
     .topic {
         padding: 0.3em;

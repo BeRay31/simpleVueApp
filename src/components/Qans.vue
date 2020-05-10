@@ -28,7 +28,6 @@
         <label for="E" @click='ansData.ans = "E"'>E</label>
         <span>{{ ansData.ansE }}</span>
       </div>
-      <p>{{ansData.ans}}</p>
   </div>
 </template>
 
@@ -43,9 +42,10 @@
         background-color: #edf5e1;
         margin: 1em;
         padding: 1em;
+        border-radius: 1em;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
     .instruction {
-      background-color: aqua;
       margin-bottom: 0.8em;
     }
     .ans {

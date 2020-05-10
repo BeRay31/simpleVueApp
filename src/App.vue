@@ -7,7 +7,7 @@
 		<app-header :name="nama"/>
 		<div class="content-container">
 			<app-question :data="question"/>
-       		<app-status/>
+       		<app-status :data="question"/>
 		</div>
 	</div>
 </template>
@@ -31,7 +31,7 @@
 					ansD: "this is sample Ans",
 					ansE: "this is sample Ans",
 					topic :"this is sample topic",
-					ans : "A",
+					ans : "",
 				},{
 					question : "this is sample question 2",
 					instruction : "select one of below 2",
@@ -41,7 +41,7 @@
 					ansD: "this is sample Ans 2",
 					ansE: "this is sample Ans 2",
 					topic :"this is sample topic 2",
-					ans : "C",
+					ans : "",
 				}],
 
 			}
