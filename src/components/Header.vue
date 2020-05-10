@@ -1,10 +1,15 @@
 <template>
     <div class="container">
         <div class="logo">
-            <span>logo Goes Here</span>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
+            <i class="fas fa-book-reader fa-2x" />
+            <div class="logo-text">
+                <p>Simple</p>
+                <p>TryOut</p>
+                <p>Apps</p>
+            </div>
         </div>
         <div class="navbar">
-            <span>Name goes Here</span>
+            <span>{{ name }}</span>
         </div>
     </div>
 </template>
@@ -12,6 +17,7 @@
 <script>
 
     export default {
+        props : ['name']
         //data goes here
     }
 </script>
@@ -31,13 +37,19 @@
     }
     .logo {
         padding : 1em;
+        color: "#edf5e1";
+        display: flex;
+        align-content: center;
+        justify-content: center;
+    }
+
+    .logo-text{
+        padding-left: 1em;
+        text-align: center;
     }
 
     .navbar {
         padding : 1em;
     }
 
-    span {
-        background-color: blue;
-    }
 </style>

@@ -25,12 +25,11 @@
         background-color: #a8d0e6;
         margin: 0 1em;
         border-radius: 3vh;
-        height: 60%;
         display: grid;
-        grid-template-rows: 3fr 5fr 1fr;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
     .button-finish {
         background-color: yellow;
-        margin: 0.3em 1em;
+        margin: 0.8em;
     }
 </style>

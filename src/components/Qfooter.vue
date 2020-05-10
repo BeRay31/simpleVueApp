@@ -1,18 +1,43 @@
 <template>
     <div class="q-footer-container">
-
+        <div class="eraseButton" @click="ansData.ans = ''">
+            <span>Erase Answer</span>
+        </div>
+        <div class="controller">
+            <span class="logo-arrow" @click="dec()">
+                <i class="fas fa-arrow-circle-left fa-2x"/>
+            </span>
+            <div class="text-box">
+                <span>{{ index + 1 }}</span>
+            </div>
+            <span class="logo-arrow" @click="inc()">
+                <i class="fas fa-arrow-circle-right fa-2x"/>
+            </span>
+        </div>
     </div>
 </template>
 
 <script>
-export default {
-
-}
+    export default {
+        props : ["ansData", "index", "inc" , "dec"]
+    }
 </script>
 
 <style>
     .q-footer-container {
-        background-color: brown;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
         margin: 1em;
+    }
+    .eraseButton {
+        padding: 0.8em;
+        border-radius: 0.7em;
+        background-color: #edf5e1;
+        cursor: pointer;
+    }
+    .eraseButton:hover {
+        background-color: #aab19f;
     }
 </style>

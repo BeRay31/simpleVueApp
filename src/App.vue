@@ -1,8 +1,12 @@
 <template>
 	<div id="app" class="app-container">
-		<app-header/>
+		<link rel="stylesheet" 
+        href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" 
+        integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" 
+        crossorigin="anonymous">
+		<app-header :name="nama"/>
 		<div class="content-container">
-			<app-question/>
+			<app-question :data="question"/>
        		<app-status/>
 		</div>
 	</div>
@@ -15,11 +19,38 @@
 
 	export default {
 		name: 'App',
+		data() {
+			return {
+				nama : "Reyvan Rizky",
+				question : [{
+					question : "this is sample question",
+					instruction : "select one of below",
+					ansA: "this is sample Ans",
+					ansB: "this is sample Ans",
+					ansC: "this is sample Ans",
+					ansD: "this is sample Ans",
+					ansE: "this is sample Ans",
+					topic :"this is sample topic",
+					ans : "A",
+				},{
+					question : "this is sample question 2",
+					instruction : "select one of below 2",
+					ansA: "this is sample Ans 2",
+					ansB: "this is sample Ans 2",
+					ansC: "this is sample Ans 2",
+					ansD: "this is sample Ans 2",
+					ansE: "this is sample Ans 2",
+					topic :"this is sample topic 2",
+					ans : "C",
+				}],
+
+			}
+		},
 		components: {
 			appHeader : Header,
 			appQuestion : Question,
             appStatus : Status,
-		}
+		},
 	}
 </script>
 

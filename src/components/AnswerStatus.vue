@@ -13,6 +13,6 @@ export default {
 <style>
     .ans-status-container {
         background-color: aquamarine;
-        margin: 0.3em 1em;
+        margin:0.8em;
     }
 </style>
