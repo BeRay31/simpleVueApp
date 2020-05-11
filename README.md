@@ -2,7 +2,7 @@
 
 > A Vue.js apps
 
-## Build Setup
+## How To Run
 
 ``` bash
 # install json-server
