@@ -14,7 +14,7 @@ npm install
 # run json server at localhost:3000
 json-server --watch db.json
 
-# serve with hot reload at localhost:8080
+# serve with hot reload at localhost:8080 (in another terminal)
 npm run dev
 
 # ENJOY THE APP (NOT PERFECT THO)
