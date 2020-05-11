@@ -56,23 +56,20 @@
 			}
 		},
 		created() {
-			
-			for(let i = 0; i<20;i++) {
-				this.question.push({
-					question : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, unde. Enim rem nostrum laborum porro saepe. Quod deserunt nostrum officia eveniet quis architecto beatae exercitationem dolorum expedita consequuntur illum voluptatem, temporibus similique obcaecati natus in aliquid repellat? Aspernatur ratione necessitatibus, voluptatum facere pariatur ducimus et ipsa vel, vero voluptatibus accusamus soluta earum itaque non neque cupiditate quia eos dolor voluptates iure maiores. Nemo vel numquam quis maxime suscipit laboriosam molestiae cum culpa eligendi consequatur aperiam aliquid fugiat accusantium reprehenderit perspiciatis ut voluptatum possimus mollitia, quas sequi! Nobis modi magni corrupti labore odio ad, tenetur temporibus id quisquam nulla, mollitia reprehenderit!",
-					instruction : "sLorem ipsum dolor sit amet, consectetur adipisicing elit. Cum facere quae perspiciatis dolores, commodi voluptates incidunt amet minima, maiores nihil natus asperiores molestiae eaque voluptatum accusamus architecto facilis veniam ut!",
-					ansA: "tLorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus error assumenda hic culpa est aperiam odio quisquam quae nobis repudiandae.",
-					ansB: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus error assumenda hic culpa est aperiam odio Lorem Ipsume.",
-					ansC: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus error assumenda hic culpa est aperiam odio Lorem Ipsume.",
-					ansD: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus error assumenda hic culpa est aperiam odio Lorem Ipsume.",
-					ansE: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus error assumenda hic culpa est aperiam odio Lorem Ipsume.",
-					topic :"Lorem Ipsum",
-					ans : '',
-				});
-			}
-			for(let i = 0; i<20;i++) {
-				this.ans.push('A');
-			}
+			this.$http.get('http://localhost:3000/data')
+			.then(response => {
+				return (response.json());
+			})
+			.then((data) => {
+				this.question = data;
+			});
+			this.$http.get('http://localhost:3000/answer')
+			.then(response => {
+				return (response.json());
+			})
+			.then((data) => {
+				this.ans = data;
+			});
 		}
 	}
 </script>

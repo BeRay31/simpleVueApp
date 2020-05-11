@@ -60,10 +60,10 @@ export default {
         margin: auto;
         margin-top: 5vh;
         border-radius: 7vh;
-        justify-items: center;
         cursor: default;
         border-color: var(--secondary-color);
-        align-items: center;
+        align-content: center;
+        justify-items: center;
     }
     .wrong-ans {
         background-color: #fb3862;

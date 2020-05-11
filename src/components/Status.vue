@@ -1,6 +1,6 @@
 <template>
   <div class="status-container">
-      <app-time-status/>
+      <app-time-status :timesUp="timeUp"/>
       <app-ans-status :ansData="data" :idx="index"/>
       <div class="submitButton reviewButton touchableButton borderNshadow use-staat" @click="submitted()">
           Kumpulkan Jawaban
@@ -24,6 +24,9 @@
                 if(val) {
                     this.$emit('submitted')
                 }
+            },
+            timeUp(){
+                this.$emit('submitted');
             }
         }
     }

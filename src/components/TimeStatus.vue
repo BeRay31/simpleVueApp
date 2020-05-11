@@ -22,9 +22,10 @@
 
 <script>
   export default {
+    props:["timesUp"],
     data() {
       return {
-        time : 7200, 
+        time : 10, 
       }
     },
     created() {
@@ -34,6 +35,7 @@
         } else {
           clearInterval(timer);
           alert("Your Time is Up");
+          this.timesUp();
           //submit button triggered
         }
       },1000)
