@@ -25,7 +25,7 @@
     props:["timesUp"],
     data() {
       return {
-        time : 10, 
+        time : 7200, 
       }
     },
     created() {
