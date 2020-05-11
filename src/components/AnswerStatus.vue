@@ -1,11 +1,12 @@
 <template>
-    <div class="ans-status-container">
-        <div class="header-status-ans">
-            <span>Question Answered</span>
-            <span>{{calculcateAns}} of {{ansData.length}}</span>
+    <div class="ans-status-container borderNshadow use-staat">
+        <div class="header-status-ans borderNshadow">
+            <span>Panel Jawaban</span>
+            <span>{{calculcateAns}} dari {{ansData.length}}</span>
+            <span>soal terjawab</span>
         </div>
         <div class="panel-ans">
-            <div class="text-box panel-items" 
+            <div class="text-box panel-items borderNshadow" 
             :class="{
                 answered : ansData[index].ans != '',
                 'active-index' : index==idx,
@@ -16,7 +17,7 @@
             ><span>{{ index+1 }}</span>
             </div>
         </div>
-        <div class="touchableButton reviewButton">
+        <div class="touchableButton reviewButton borderNshadow">
             Review
         </div>
     </div>
@@ -47,17 +48,25 @@
 
 <style>
     .ans-status-container {
-        background-color: var(--primary-color);
+        letter-spacing: 0.06em;
+        background-color: var(--secondary-color);
         margin: 1em;
         padding: 1em;
         border-radius: 1.4em;
         width: 90%;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        display: grid;
+        align-items: center;
+        justify-items: center;
+        font-size: 1.2vw;
     }
     .header-status-ans {
         display: grid;
         align-items: center;
         justify-content: center;
+        background-color: var(--background-main-color);
+        padding: 0.2em;
+        width: 50%;
+        border-radius: 1em;
     }
     .header-status-ans > span {
         margin : 0.5em;
@@ -65,30 +74,34 @@
     }
     .panel-ans {
         display: grid;
+        justify-items: center;
         grid-template-columns: repeat(5,1fr);
         margin-top: 1em;
     }
     .panel-items {
-        width: 2.3em;
-        height: 2.3em;
+        width: 2.8vw;
+        height: 2.8vw;
         border-radius: 1.4em;
         background-color: var(--background-main-color);
-        margin: 0.6em;
+        margin: 0.8em;
         cursor: pointer;
-        border: 3px solid var(--secondary-color);
     }
     .panel-items:hover {
         background-color:var(--hover-color);
-        color: var(--background-main-color);
+        color: black;
+        transition:all .5s ease;
     }
     .answered {
-        background-color: var(--secondary-color);
-        transition:all .4s ease;
+        background-color: var(--border-color);
         color: var(--background-main-color);
+        transition:all .4s ease;
+        border-color: var(--primary-color);
     }
     .active-index {
-        background-color: var(--active-link-color);
+        background-color: var(--secondary-color);
         color: var(--background-main-color);
+        border-color: var(--primary-color);
+        transition:all .5s ease;
     }
     .reviewButton{
         text-align: center;

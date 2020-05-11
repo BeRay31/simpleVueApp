@@ -2,7 +2,7 @@
   <div class="status-container">
       <app-time-status/>
       <app-ans-status :ansData="data" :idx="index"/>
-      <div class="submitButton reviewButton touchableButton">
+      <div class="submitButton reviewButton touchableButton borderNshadow use-staat">
           Submit
       </div>
     </div>
@@ -26,13 +26,22 @@
         margin: 0 1em;
         border-radius: 3vh;
         display: grid;
-        grid-template-rows: 35% 55% 10%;
+        height: 60%;
+        width: 100%;
         align-items: center;
         justify-items: center;
     }
     .submitButton {
+        background-color: var(--secondary-color);
+        color: var(--background-main-color);
         margin: auto;
-
+        letter-spacing: 0.08em;
+        font-size: 1.2vw;
+    }
+    .submitButton:hover {
+        background-color: var(--primary-color);
+        border-color: var(--secondary-border-color);
+        color: black;
     }
 
 </style>

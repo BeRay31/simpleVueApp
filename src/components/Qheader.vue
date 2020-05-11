@@ -1,18 +1,14 @@
 <template>
     <div class="q-header-container">
         <div class="topic">
-            <span>{{ topic }}</span>
+            <span><u class="use-sans-pro">{{ topic }}</u></span>
         </div>
         <div class="controller">
-            <span class="logo-arrow" @click="dec()">
-                <i class="fas fa-arrow-circle-left fa-2x"/>
-            </span>
-            <div class="text-box">
+            <i class="fas fa-arrow-circle-left fa-2x logo-arrow" @click="dec()"/>
+            <div class="text-box use-staat">
                 <span>{{ index + 1 }}</span>
             </div>
-            <span class="logo-arrow" @click="inc()">
-                <i class="fas fa-arrow-circle-right fa-2x"/>
-            </span>
+            <i class="fas fa-arrow-circle-right fa-2x logo-arrow" @click="inc()"/>
         </div>
     </div>
 </template>
@@ -29,11 +25,12 @@ export default {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+        color: var(--background-main-color);
         margin: 1em;
     }
     .topic {
         padding: 0.3em;
-        font-size: 1.6em;
+        font-size: 1.6vw;
     }
     .controller {
         width: 20%;
@@ -46,27 +43,30 @@ export default {
     .text-box {
         background-color:var(--background-main-color);
         color: black;
-        width: 2em;
-        height: 2em;
-        border-radius: 1em;
+        width: 2.6vw;
+        height: 2.6vw;
+        border-radius: 1.3em;
         display: flex;
         align-items: center;
         justify-content: center;   
         text-align: center;
         margin: auto;
         cursor: default;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
+        letter-spacing: 0.08em;
+        border: 4px solid var(--border-color);
     }
     .logo-arrow {
-        width: 2em;
-        height: 2em;
-        border-radius: 1em;
-        color: #edf5e1;
+        display: grid;
+        align-items: center;
+        justify-items: center;
+        width: 2.6vw;
+        height: 2.6vw;
+        border-radius: 1.3em;
+        color: var(--background-main-color);
         cursor: pointer;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
     .logo-arrow:hover {
-        color: #aab19f;
+        color: var(--hover-color);
+        transition:all .5s ease;
     }
 </style>

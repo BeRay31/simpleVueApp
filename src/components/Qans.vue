@@ -1,5 +1,5 @@
 <template>
-  <div class="q-ans-container">
+  <div class="q-ans-container borderNshadow use-sans-pro">
       <div class="instruction">
           <span>{{ ansData.instruction }}</span>
       </div>
@@ -39,9 +39,10 @@
 
 <style>
     .q-ans-container {
-        background-color: #edf5e1;
+        background-color: var(--background-main-color);
         margin: 1em;
         padding: 1em;
+        font-size: 1.2vw;
         border-radius: 1em;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
@@ -50,6 +51,9 @@
     }
     .ans {
       margin: 2em;
+      display: flex;
+      align-items: center;
+      justify-items: center;
     }
     .ans > span {
       margin-left: 1em;
@@ -59,26 +63,26 @@
     }
     .ans > label {
       cursor:pointer;
-      background-color: #edf5e1;
-      color: black;
-      width: 1.8em;
-      height: 1.8em;
-      border-radius: 0.9em;
+      background-color: var(--background-main-color);
+      height: 2em;
+      width: 2em;
+      padding: 1em;
+      border-radius: 1.2em;
       display: inline-flex;
       align-items: center;
       justify-content: center;   
       text-align: center;
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-      transition:all .7s ease;
+      transition:all .5s ease;
       border: 2px solid var(--secondary-color);
-
     }
     .ans > label:hover {
-      background-color: #aab19f;
+      background-color: var(--hover-color);
+      transition:all .5s ease;
     }
 
     .ans > input:checked + label {
-      background:#009ACE;
+      transition:all .5s ease;
+      background:var(--secondary-color);
       color:#fff;
     }
 </style>
