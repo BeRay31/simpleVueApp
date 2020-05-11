@@ -9,7 +9,7 @@
             <input type="text" name="nama" v-model="nama">
         </div>
           <div class="enter-name borderNshadow" @click="changeName">
-              Selesai
+              Mulai
           </div>
           <p>Klik untuk mulai !</p>
       </div>

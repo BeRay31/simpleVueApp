@@ -2,8 +2,8 @@
   <div class="status-container">
       <app-time-status/>
       <app-ans-status :ansData="data" :idx="index"/>
-      <div class="submitButton reviewButton touchableButton borderNshadow use-staat">
-          Submit
+      <div class="submitButton reviewButton touchableButton borderNshadow use-staat" @click="submitted()">
+          Kumpulkan Jawaban
       </div>
     </div>
 </template>
@@ -13,10 +13,18 @@
     import AnsStatus from './AnswerStatus.vue';
 
     export default {
-        props:["data","index"],
+        props:["data","index","changeStatus"],
         components: {
             appTimeStatus : TimeStatus,
             appAnsStatus : AnsStatus,
+        },
+        methods :{
+            submitted() {
+                let val = confirm("Apakah anda yakin?");
+                if(val) {
+                    this.$emit('submitted')
+                }
+            }
         }
     }
 </script>
@@ -35,7 +43,10 @@
         background-color: var(--secondary-color);
         color: var(--background-main-color);
         margin: auto;
-        letter-spacing: 0.08em;
+        width: 60%;
+        text-align: center;
+        padding: 0.6em;
+        letter-spacing: 0.12em;
         font-size: 1.2vw;
     }
     .submitButton:hover {

@@ -1,25 +1,26 @@
 <template>
     <div class="ans-status-container borderNshadow use-staat">
         <div class="header-status-ans borderNshadow">
-            <span>Panel Jawaban</span>
             <span>{{calculcateAns}} dari {{ansData.length}}</span>
-            <span>soal terjawab</span>
+            <span>terjawab</span>
         </div>
         <div class="panel-ans">
-            <div class="text-box panel-items borderNshadow" 
+            <div class="ans-sheet"
+            v-for="(data,index) in ansData" 
+            :key="index" 
+            ><span 
+            class="text-box panel-items borderNshadow" 
             :class="{
                 answered : ansData[index].ans != '',
                 'active-index' : index==idx,
             }" 
-            v-for="(data,index) in ansData" 
-            :key="index" 
             @click="changeQuestion(index)"
-            ><span>{{ index+1 }}</span>
+            >{{ index+1 }}</span>
+            <span class="text-ans" v-if="ansData[index].ans!=''">{{ansData[index].ans}}</span>
+            <span class="text-ans" v-else>-</span>
             </div>
         </div>
-        <div class="touchableButton reviewButton borderNshadow">
-            Review
-        </div>
+
     </div>
 </template>
 
@@ -42,7 +43,7 @@
             changeQuestion(index) {
                 eventBus.changeIndex(index);
             }
-        }
+        },
     }
 </script>
 
@@ -54,7 +55,8 @@
         padding: 1em;
         border-radius: 1.4em;
         width: 90%;
-        display: grid;
+        display: flex;
+        flex-direction: column;
         align-items: center;
         justify-items: center;
         font-size: 1.2vw;
@@ -103,10 +105,12 @@
         border-color: var(--primary-color);
         transition:all .5s ease;
     }
-    .reviewButton{
-        text-align: center;
-        margin: 0.3em;
-        margin-top: 2em;
-        width: 40%;
+    .ans-sheet{
+        display: inline-flex;
+        align-items: center;
     }
+    .text-ans {
+        font-size: 1.2vw;
+    }
+
 </style>

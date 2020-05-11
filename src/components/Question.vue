@@ -42,11 +42,6 @@
                 this.$emit('indexChanged',this.index);
              });
         },
-        watch:{
-            indexOnChange(){
-                eventBus.indexChange(this.index)
-            }
-        }
     }
 </script>
 

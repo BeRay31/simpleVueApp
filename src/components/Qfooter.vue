@@ -1,7 +1,7 @@
 <template>
     <div class="q-footer-container use-staat">
         <div class="touchableButton borderNshadow" @click="ansData.ans = ''">
-            <span>Erase Answer</span>
+            <span>Hapus jawaban</span>
         </div>
         <div class="controller">
             <span class="logo-arrow" @click="dec()">

@@ -8,7 +8,8 @@ export const eventBus = new Vue({
   methods:{
     changeIndex(index) {
       this.$emit('indexEdited',index);
-    }
+    },
+
   }
 })
 

@@ -10,10 +10,10 @@
 		</div>
 		<div class="content-container" v-else-if="nama!=''&& !submit">
 			<app-question :data="question" :index="index" @indexChanged="changeIndex($event)" />
-       		<app-status :data="question" :index="index" />
+       		<app-status :data="question" :index="index" @submitted="submit=true"/>
 		</div>
 		<div class="submit-screen" v-else-if="submit">
-			<app-submit/>
+			<app-submit :questionKey="ans" :data="question"/>
 		</div>
 	</div>
 </template>
@@ -24,6 +24,7 @@
 	import Status from './components/Status.vue';
 	import Home from './components/Home.vue';
 	import Submit from './components/Submit.vue';
+	import { eventBus } from './main.js';
 
 	export default {
 		name: 'App',
@@ -31,6 +32,7 @@
 			return {
 				nama : '',
 				question : [],
+				ans : [],
 				index : 0,
 				submit : false,
 			}
@@ -47,12 +49,14 @@
 				this.index = index;
 			},
 			changeNama(nama) {
-				console.log(nama);
-				console.log(this.nama);
 				this.nama = nama;
+			},
+			submit() {
+				this.submit = true;
 			}
 		},
 		created() {
+			
 			for(let i = 0; i<20;i++) {
 				this.question.push({
 					question : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, unde. Enim rem nostrum laborum porro saepe. Quod deserunt nostrum officia eveniet quis architecto beatae exercitationem dolorum expedita consequuntur illum voluptatem, temporibus similique obcaecati natus in aliquid repellat? Aspernatur ratione necessitatibus, voluptatum facere pariatur ducimus et ipsa vel, vero voluptatibus accusamus soluta earum itaque non neque cupiditate quia eos dolor voluptates iure maiores. Nemo vel numquam quis maxime suscipit laboriosam molestiae cum culpa eligendi consequatur aperiam aliquid fugiat accusantium reprehenderit perspiciatis ut voluptatum possimus mollitia, quas sequi! Nobis modi magni corrupti labore odio ad, tenetur temporibus id quisquam nulla, mollitia reprehenderit!",
@@ -65,6 +69,9 @@
 					topic :"Lorem Ipsum",
 					ans : '',
 				});
+			}
+			for(let i = 0; i<20;i++) {
+				this.ans.push('A');
 			}
 		}
 	}
